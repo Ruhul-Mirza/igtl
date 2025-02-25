@@ -23,10 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`bg-gradient-to-b from-white to-orange-50 dark:from-gray-900 dark:to-gray-800 ${poppins.className}`}>
+      <body className={`${poppins.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="pt-16">
+          <main>
             {children}
           </main>
         </ThemeProvider>

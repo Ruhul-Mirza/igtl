@@ -1,139 +1,117 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronDown, Github, Linkedin, Twitter, Instagram, Facebook, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Globe, Brain, Code } from "lucide-react";
 
-export default function Sidebar({ onClose, isOpen }: { onClose: () => void; isOpen: boolean }) {
-const [isServicesOpen, setIsServicesOpen] = useState(false);
-
-return (
-<>
-{/* Backdrop */}
-{isOpen && (
-<div
-className="fixed inset-0 bg-black/30 backdrop-blur-[2px] z-50 transition-opacity duration-300"
-onClick={onClose}
-/>
-)}
-
-
-  {/* Sidebar */}
-  <div 
-    className={`fixed top-0 left-0 h-full  bg-white dark:bg-[rgb(39,39,42)] z-50 shadow-2xl transform transition-transform duration-500 ease-out ${
-      isOpen ? "translate-x-0" : "-translate-x-full"
-    }`}
-  >
-    <div className="h-full flex flex-col">
-      {/* Header */}
-      <div className="relative py-2 border-b border-gray-100 dark:border-zinc-700">
-        <button 
-          onClick={onClose}
-          className="absolute right-4 top-1/2  -translate-y-1/2 p-2 rounded-full text-gray-600 dark:text-zinc-300 hover:bg-gray-200 dark:hover:bg-[#3f3f46] transition-colors"
-        >
-          <X size={20} />
-        </button>
-        <Link href="/">
-        <Image
-          src="/IGTL_Logo-removebg-preview.png"
-          alt="Logo"
-          width={130}
-          height={45}
-          className="dark:hidden"
-        />
-
-        </Link>
-        <Link href="/">
-
-        <Image
-          src="/erasebg-transformed.png"
-          alt="Logo Dark"
-          width={130}
-          height={45}
-          className="hidden dark:block"
-        />
-        </Link>
-      </div>
-
-      {/* Navigation */}
-      <div className="flex-1 overflow-y-auto scrollbar-thin py-6 px-4">
-        <nav className="space-y-4">
-          {/* Services Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="w-full px-3 py-2 flex items-center justify-between rounded-lg dark:border dark:border-zinc-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-[#3f3f46] transition-all duration-300"
-            >
-              <span className="font-medium">Services</span>
-              <ChevronDown
-                size={18}
-                className={`transform transition-transform duration-300 ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            
-            <div 
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isServicesOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="pt-2 space-y-1">
-                {["Web Development", "Mobile Apps", "Cloud Solutions"].map((service) => (
-                  <Link
-                    key={service}
-                    href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block p-3 pl-6 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 transition-colors"
-                  >
-                    {service}
-                  </Link>
-                ))}
-              </div>
-            </div>
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white relative z-10 to-orange-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div className="relative">
+          {/* Background Elements */}
+          <div className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+            <div className="blur-[106px] h-56 bg-gradient-to-br from-orange-500 to-orange-400 dark:from-orange-700"></div>
+            <div className="blur-[106px] h-32 bg-gradient-to-r from-orange-400 to-yellow-300 dark:to-yellow-600"></div>
           </div>
 
-          {/* Regular Links */}
-          {["About", "Contact"].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              className="block p-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 transition-colors"
+          <div className="relative">
+            {/* Main Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              {item}
-            </Link>
-          ))}
+              <motion.h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Welcome to {" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                  IGTL
+                </span>
+              </motion.h1>
 
-          {/* Career Button */}
-          <Link
-            href="/careers"
-            className="block mt-6 p-3 text-center text-white bg-gradient-to-r from-blue-600/90 to-blue-700/90 rounded-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
-          >
-            Join Our Team
-          </Link>
-        </nav>
-      </div>
+              <motion.p
+                className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                Your Trusted Partner in BPO, KPO & Technology Solutions
+              </motion.p>
+            </motion.div>
 
-      {/* Social Links */}
-      <div className="p-6 border-t border-gray-100 dark:border-gray-800">
-        <div className="flex items-center justify-center gap-5">
-          {[
-            { icon: Linkedin, href: "#", color: "hover:text-[#0077b5]" },
-            { icon: Twitter, href: "#", color: "hover:text-[#1DA1F2]" },
-            { icon: Github, href: "#", color: "hover:text-[#333]" },
-            { icon: Instagram, href: "#", color: "hover:text-[#E4405F]" },
-            { icon: Facebook, href: "#", color: "hover:text-[#1877F2]" }
-          ].map(({ icon: Icon, href, color }, index) => (
-            <a
-              key={index}
-              href={href}
-              className={`p-2 rounded-full bg-gray-50/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 ${color} dark:hover:text-white transform hover:scale-110 transition-all duration-200`}
+            {/* Service Cards */}
+            <motion.div
+              className="grid md:grid-cols-3 gap-6 mt-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Icon size={20} />
-            </a>
-          ))}
+              {/** BPO Card */}
+              <ServiceCard
+                icon={<Globe className="h-10 w-10 text-orange-500 mb-4" />}
+                title="Business Process Outsourcing"
+                description="Streamline your operations with our comprehensive BPO solutions"
+              />
+
+              {/** KPO Card */}
+              <ServiceCard
+                icon={<Brain className="h-10 w-10 text-orange-500 mb-4" />}
+                title="Knowledge Process Outsourcing"
+                description="Leverage our expertise for high-value knowledge-based services"
+              />
+
+              {/** Technology Card */}
+              <ServiceCard
+                icon={<Code className="h-10 w-10 text-orange-500 mb-4" />}
+                title="Technology Solutions"
+                description="Drive innovation with our cutting-edge technology services"
+              />
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <CTAButton />
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</>
+  );
+}
+
+function ServiceCard({ icon, title, description }) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="relative group rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 shadow-xl border border-orange-100/20 dark:border-orange-700/20"
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      {icon}
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+    </motion.div>
+  );
+}
+
+function CTAButton() {
+  return (
+    <a
+      href="/contact"
+      className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
+    >
+      Get Started
+      <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+    </a>
+  );
+}

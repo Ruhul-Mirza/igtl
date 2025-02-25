@@ -29,11 +29,11 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 my-2 px-4">
       <nav
         className={`mx-auto transition-all duration-500 ease-in-out ${
-          isScrolled ? "max-w-3xl" : "max-w-5xl"
-        } backdrop-blur-2xl bg-white/75 dark:bg-gray-900/75 shadow-lg rounded-2xl shadow-orange-500/5`}
+          isScrolled ? "max-w-2xl" : "max-w-4xl"
+        } backdrop-blur-2xl bg-white/75 dark:bg-transparent shadow-lg rounded-2xl shadow-orange-500/5`}
       >
-        <div className="px-4">
-          <div className="flex h-16 items-center justify-between">
+        <div className="px-2">
+          <div className="flex h-14 items-center justify-between">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
