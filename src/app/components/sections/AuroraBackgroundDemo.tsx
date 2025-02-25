@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "../ui/aurora-background";
+import { Cover } from "../ui/cover";
 
 export function AuroraBackgroundDemo() {
   return (
@@ -23,13 +24,13 @@ export function AuroraBackgroundDemo() {
           className="space-y-6 text-center max-w-4xl mx-auto my-40"
         >
           
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f7c111] to-yellow-600 ">
-            Welcome to IGTL
+            <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+          Welcome to  <Cover>IGTL</Cover>
           </h1>
           
 
           
-          <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             We specialize in delivering cutting-edge business process outsourcing (BPO), 
             knowledge process outsourcing (KPO), and innovative technology solutions designed 
             to drive business growth, enhance operational efficiency, and optimize customer engagement.
