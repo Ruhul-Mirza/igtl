@@ -7,18 +7,9 @@ import { useTheme } from "next-themes"
 import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react"
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false)
   const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const serviceItems = [
     { name: "List 1", href: "/services/list1" },
@@ -26,14 +17,12 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 my-2 px-4">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full">
       <nav
-        className={`mx-auto transition-all duration-500 ease-in-out ${
-          isScrolled ? "max-w-2xl" : "max-w-4xl"
-        } backdrop-blur-2xl bg-white/75 dark:bg-transparent shadow-lg rounded-2xl shadow-orange-500/5`}
+        className={`transition-all duration-500 ease-in-out py-1 border border-zinc-100 dark:border-zinc-800 backdrop-blur-2xl`}
       >
         <div className="px-2">
-          <div className="flex h-14 items-center justify-between">
+          <div className={`flex h-14 items-center justify-between `}>
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">

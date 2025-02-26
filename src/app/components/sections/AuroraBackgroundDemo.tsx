@@ -30,11 +30,13 @@ export function AuroraBackgroundDemo() {
           
 
           
-          <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            We specialize in delivering cutting-edge business process outsourcing (BPO), 
-            knowledge process outsourcing (KPO), and innovative technology solutions designed 
-            to drive business growth, enhance operational efficiency, and optimize customer engagement.
-          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+    We specialize in delivering <span className="font-medium text-gray-800 dark:text-white">cutting-edge</span> 
+    business process outsourcing (BPO), knowledge process outsourcing (KPO), and 
+    <span className="font-medium text-orange-500"> innovative technology solutions</span>, 
+    designed to drive business growth, enhance operational efficiency, and optimize 
+    customer engagement.
+  </p>
 
           <motion.div
             initial={{ opacity: 0 }}

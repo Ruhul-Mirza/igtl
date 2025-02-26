@@ -1,10 +1,14 @@
 import React from 'react'
-import { AuroraBackgroundDemo } from './components/sections/AuroraBackgroundDemo'
+
+import { HeroHighlightDemo } from './components/sections/HeroHighlightDemo'
+import WhyChooseUs from './components/sections/WhyChooseUsSection'
 
 export default function Home() {
   return (
     <>
-    <AuroraBackgroundDemo/>
+    <HeroHighlightDemo/>
+    <WhyChooseUs/>
+    <HeroHighlightDemo/>
     </>
   )
 }
