@@ -17,7 +17,7 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full">
+    <header className="w-full">
       <nav
         className={`transition-all duration-500 ease-in-out py-1 border border-zinc-100 dark:border-zinc-800 backdrop-blur-2xl`}
       >
